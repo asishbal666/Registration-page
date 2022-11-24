@@ -1,0 +1,278 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="Educational.js"></script>
+
+<style>
+    /* Importing fonts from Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reseting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(45deg, #ce1e53, #8f00c7);
+    min-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 30px 45px;
+    box-shadow: 5px 25px 35px #3535356b;
+}
+
+.wrapper label {
+    display: block;
+    padding-bottom: 0.2rem;
+}
+
+.wrapper .form .row {
+    padding: 0.6rem 0;
+}
+
+.wrapper .form .row .form-control {
+    box-shadow: none;
+}
+
+.wrapper .form .option {
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+
+.wrapper .form .option input {
+    opacity: 0;
+}
+ 
+#sub {
+    display: block;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+}
+
+#sub:focus {
+    outline: none;
+}
+.wrapper{
+    background-color: aliceblue;
+}
+
+ 
+</style>
+</head>
+<body>
+    <div class="wrapper rounded">
+
+        <div class="h3">Registration Form</div><br>
+
+       <h4>Educational Details</h4>
+<div class="form">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label>HSC Institute Name<span class="text-danger">*</span></label>
+                    <input id="IstName" placeholder="HSC Board" type="text" class="form-control" required>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label for="">HSC Board</label>
+                    <select id="HBoardName" required aria-placeholder="Board" class="form-control">
+                        <option value="" selected hidden>Board</option>
+                        <option value="CBSE">CBSE</option>
+                        <option value="ICSC">ICSC</option>
+                        <option value="State Board">State Board</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>HSC Score<span class="text-danger">*</span></label>
+                    <input id="HScore" type="number" placeholder="Percentage" class="form-control" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label>SSC Institute Name<span class="text-danger">*</span></label>
+                    <input id="SInst" type="text" placeholder="Board Name" class="form-control" required>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-3 margin">
+                    <label>SSC Board<span class="text-danger">*</span></label>
+                    <select id="SBoardName" required aria-placeholder="Board" class="form-control">
+                        <option value="" selected hidden>Board</option>
+                        <option value="CBSE">CBSE</option>
+                        <option value="ICSC">ICSC</option>
+                        <option value="State Board">State Board</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>SSC Percentage<span class="text-danger">*</span></label>
+                    <input id="SPercnt" type="number" placeholder="Percentage" class="form-control" required>
+                </div>
+                 
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label>Currently Pursuing<span class="text-danger">*</span></label>
+                    <input id="CPurs" type="text" placeholder="Pursuing degree" class="form-control" required>
+                </div>
+                <div class="col-md-12">
+                    <label>Current educational institution Name<span class="text-danger">*</span></label>
+                    <input id="cei" type="text" placeholder="Institute Name" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Overall Marks<span class="text-danger">*</span></label>
+                    <input id="Om" type="number" placeholder="Percentage" class="form-control" required>
+                </div>
+                <div class="col-md-12">
+                    <label>Current backlogs any<span class="text-danger">*</span></label>
+                    <input id="Cba" type="number" placeholder="Current backlogs detail" class="form-control" required>
+                </div>
+            </div>
+             
+              <div id="btnSubmit"  onclick="return Submit()"  class="btn btn-primary mt-3" >Next</div>
+               
+
+        </div>
+         
+    </div>
+
+ 
+</div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ <script type="text/javascript">
+   function Submit(){
+    var Instname=document.getElementById('IstName').value;
+    var HBoardName=document.getElementById('HBoardName').value;
+    var HScore=document.getElementById('HScore').value;
+    var SInst=document.getElementById('SInst').value;
+    var SBoardName=document.getElementById('SBoardName').value;
+    var SPercnt=document.getElementById('SPercnt').value;
+    var CPurs=document.getElementById('CPurs').value;
+    var cei=document.getElementById('cei').value;
+    var Om=document.getElementById('Om').value;
+    var Cba=document.getElementById('Cba').value;
+
+
+    localStorage.setItem("IstName", Instname);
+    localStorage.setItem("HBoardName", HBoardName);
+    localStorage.setItem("HScore",HScore);
+    localStorage.setItem("SInst",SInst);
+    localStorage.setItem("SBoardName", SBoardName);
+    localStorage.setItem("SPercnt", SPercnt);
+    localStorage.setItem("CPurs", CPurs);
+    localStorage.setItem("cei", cei);
+    localStorage.setItem("Om", Om);
+    localStorage.setItem("Cba",Cba);
+ 
+    if(Instname==""){
+        alert("Please Enter HSC Institute Name");
+        return false;
+    }
+    if(Instname.replace(/\s/g,"").length<=0){
+        alert("no whitespace allowed")
+        return false;
+    }
+   if(HBoardName==""){
+        alert("Please Enter Board Name");
+        return false;
+    }
+     
+    if(HScore==""){
+        alert("Please Enter Hs Score");
+        return false;
+    }
+    if(HScore>100){
+     alert("please enter valid score");
+     return false;
+    }
+    if(SInst=="")
+    {
+        alert("Enter ssc Institute");
+        return false;
+    }
+    if(SInst.replace(/\s/g,"").length<=0){
+        alert("no whitespace allowed");
+        return false;
+    }
+    if(SBoardName=="")
+    {
+        alert("Enter Board Name");
+        return false;
+    }
+     
+    if(SPercnt=="")
+    {
+        alert("Enter Percent");
+        return false;
+    }
+    if(SPercnt>100){
+     alert("please enter valid score");
+     return false;
+    }
+    if(CPurs=="")
+    {
+        alert("Enter Current Pursuing");
+        return false;
+    }
+    if(CPurs.replace(/\s/g,"").length<=0){
+        alert("no whitespace allowed")
+        return false;
+    }
+    if(cei=="")
+    {
+        alert("Enter Current Educational Institute");
+        return false;
+    }
+    if(cei.replace(/\s/g,"").length<=0){
+        alert("no whitespace allowed")
+        return false;
+    }
+    if(Om==""){
+        alert(" Enter Overall Marks");
+        return false;
+    }
+    if(Om>100){
+     alert("please enter valid score");
+     return false;
+    }
+    if(Cba==""){
+        alert(" Enter Current backlogs if any");
+        return false;
+    }
+    
+    window.location.href = "http://127.0.0.1:5500/Documents.html";
+   }
+ </script>

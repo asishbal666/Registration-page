@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+
+<style>
+    /* Importing fonts from Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reseting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(45deg, #ce1e53, #8f00c7);
+    min-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 30px 45px;
+    box-shadow: 5px 25px 35px #3535356b;
+}
+.wrapper{
+    background-color: rgb(220, 243, 235);
+}
+.span{
+color: red;
+font-weight: bolder;
+}
+ 
+</style>
+</head>
+<body>
+    <div class="wrapper rounded">
+        <div class="h3">Registration Form</div><br>
+        <h4>Upload Documents</h4> 
+        <p>
+            <span class="span">Instructions(please read carefully)</span><br>
+➢ Recent passport size photograph (extension(.jpg,.jpeg)& size less than 4MB) <br>
+➢ HSC mark sheet (extension(.jpg,.jpeg,.pdf,.docx) &size less than 4MB)<br>
+➢ SSC mark sheet (extension(.jpg,.jpeg,.pdf,.docx) &size less than 4MB)<br>
+➢ All semesters mark sheet in a single PDF or docs (extension(.pdf,.docx) &file size less than 10MB)<br>
+        </p>
+       <form name="myform" onsubmit="return validation()">
+                   <label >Recent passport size photograph<span class="span">*</span></label><br>
+                   <input type="file" name="img_upload1"><br>
+
+                   <label >HSC Certificate<span class="span">*</span></label><br>
+                   <input type="file" name="img_upload2"><br>
+                   
+                   <label >SSC Certificate<span class="span">*</span></label><br>
+                   <input type="file" name="img_upload3"><br>
+
+                   <label >All sem Marksheet in a single pdf<span class="span">*</span></label><br>
+                   <input type="file" name="img_upload4"><br>
+                   <input type="submit" class="btn btn-primary mt-3">
+        </form>
+
+        
+          
+
+    </div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ <script>
+    var img=document.forms['myform']['img_upload1'];
+    var extnsn=['jpeg','jpg','JPG','JPEG'];
+    var pdf1=document.forms['myform']['img_upload2'];
+    var extnsn1=['jpeg','jpg','JPG','JPEG','pdf','PDF','docx','DOCX'];
+    var pdf2=document.forms['myform']['img_upload3'];
+    var extnsn2=['jpeg','jpg','JPG','JPEG','pdf','PDF','docx','DOCX'];
+    var pdf3=document.forms['myform']['img_upload4'];
+    var extnsn3=['pdf','PDF','docx','DOCX'];
+    localStorage.setItem("photo",img);
+    localStorage.setItem("HSC",pdf1);
+    localStorage.setItem("SSC",pdf2);
+    localStorage.setItem("All",pdf3);
+
+    function validation(){
+        // 1st validation
+        if(img.value!=''){
+            var pos_dot=img.value.lastIndexOf('.')+1;
+            var img_ext=img.value.substring(pos_dot);
+            var result=extnsn.includes(img_ext);
+            if(result==false){
+                alert("Invalid file type")
+            }
+            else{
+                if(parseFloat(img.files[0].size/(1024*1024))>=4){
+                    alert("size must be less than 4mb"+parseFloat(img.files[0].size/(1024*1024)));
+                    return false;
+                }
+            }
+        }
+        else{
+            alert("no img selected");
+            return false;
+        }
+        // 2nd validation
+        if(pdf1.value!=''){
+            var pos_dot1=pdf1.value.lastIndexOf('.')+1;
+            var img_ext1=pdf1.value.substring(pos_dot1);
+            var result=extnsn1.includes(img_ext1);
+            if(result==false){
+                alert("Invalid file type")
+            }
+            else{
+                if(parseFloat(pdf1.files[0].size/(1024*1024))>=4){
+                    alert("size must be less than 4mb"+parseFloat(pdf1.files[0].size/(1024*1024)));
+                    return false;
+                }
+            }
+        }
+        else{
+            alert("please select HSC Certificate");
+            return false;
+        }
+        // 3rd validation
+        if(pdf2.value!=''){
+            var pos_dot2=pdf2.value.lastIndexOf('.')+1;
+            var img_ext2=pdf2.value.substring(pos_dot2);
+            var result=extnsn2.includes(img_ext2);
+            if(result==false){
+                alert("Invalid file type")
+            }
+            else{
+                if(parseFloat(pdf2.files[0].size/(1024*1024))>=4){
+                    alert("size must be less than 4mb"+parseFloat(pdf2.files[0].size/(1024*1024)));
+                    return false;
+                }
+            }
+        }
+        else{
+            alert("please select SSC Certificate");
+            return false;
+        }
+        // 4th validation
+        if(pdf3.value!=''){
+            var pos_dot3=pdf3.value.lastIndexOf('.')+1;
+            var img_ext3=pdf3.value.substring(pos_dot3);
+            var result=extnsn3.includes(img_ext3);
+            if(result==false){
+                alert("Invalid file type")
+            }
+            else{
+                if(parseFloat(pdf3.files[0].size/(1024*1024))>=10){
+                    alert("size must be less than 10mb"+parseFloat(pdf3.files[0].size/(1024*1024)));
+                    return false;
+                }
+            }
+        }
+        else{
+            alert("please select All Certificate");
+            return false;
+        }
+        
+        return true;
+    }
+ </script>
