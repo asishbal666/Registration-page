@@ -1,0 +1,1 @@
+ First page is persona detail page,after completly filling first page there is next button that will redirect to educational detail after filling that form you have to upload your doucument then you can submit your form.
